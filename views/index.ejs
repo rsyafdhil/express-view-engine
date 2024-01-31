@@ -1,0 +1,15 @@
+<%- include('partials/layout.ejs') %>
+<%- contentFor('body', '<h1>Hello, World!</h1>') %>
+<h1>Hello, World!</h1>
+
+<h5>Daftar Siswa</h5>
+<% if (siswa.length < 1) { %>
+  <p>Tidak ada data Siswa</p>
+<% } else { %>
+  <ul>
+    <% siswa.forEach(sis => { %>
+      <li><%= sis.nama %></li>
+      <li><%= sis.email %></li>
+    <% }) %>
+  </ul>
+<% } %>
